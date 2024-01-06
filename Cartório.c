@@ -16,7 +16,7 @@ int registro () //Função responsavel por cadastrar os usuários no sistema
   printf ("Digite o CPF a ser cadastrado: "); //Coletando informação do usuário
   scanf("%s" , cpf);  //%s refere-se a string
      
- strcpy(arquivo, cpf); // Responsável por copiar os valores da string
+  strcpy(arquivo, cpf); // Responsável por copiar os valores da string
  
  FILE *file; // cria o arquivo
  file = fopen (arquivo,"w"); // cria o arquivo e o "w" siginifica escrever
@@ -130,6 +130,7 @@ int main ()
       printf ("\t1 - Registrar nomes \n");
       printf ("\t2 - Consultar nomes \n");
       printf ("\t3 - Deletar nomes \n\n");
+      printf ("\t4 - Sair do sistema\n\n");
       printf("Opção: "); //fim do menu
   
       scanf ("%d" ,  &opcao); //armazenando a escolha do usuario
@@ -150,16 +151,22 @@ int main ()
    	         consulta ();
 	         break;
 	      
-	        case 3:
-	        deletar ();
- 	        break;
+	         case 3:
+	         deletar ();
+ 	         break;
+ 	         
+ 	         case 4:
+ 	         printf("Obrigado por utilizar o sistema!\n");
+ 	         return 0;
+ 	         break;
  	    
  	       
  	    
- 	      default:
- 	      printf ("essa opção não esta disponivel!\n");
-          system("pause");
-          break;
+ 	         default:
+ 	         printf ("essa opção não esta disponivel!\n");
+             system("pause");
+             break;
+        
     
      } 
 }
